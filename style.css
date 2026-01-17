@@ -1,0 +1,86 @@
+/* =========================
+   BASE
+   ========================= */
+
+html, body {
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   VISAGE
+   ========================= */
+
+.face {
+  position: relative;
+  width: 40vw;
+  max-width: 600px;
+  aspect-ratio: 1200 / 1599;
+
+  background-image: url('face.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* =========================
+   YEUX
+   ========================= */
+
+.eye {
+  position: absolute;
+  width: 5%;
+  aspect-ratio: 1 / 1;
+
+  pointer-events: none;
+  transform-origin: center;
+  transition: transform 0.05s linear;
+}
+
+/* =========================
+   LIENS (PAGE D’ACCUEIL)
+   ========================= */
+
+.links {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.link {
+  position: absolute;
+
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+
+  color: #000;
+  text-decoration: none;
+
+  opacity: 0.6;
+  pointer-events: auto;
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   POSITIONNEMENT DES LIENS
+   ========================= */
+
+.l1 { top: 15vh; left: 10vw; }
+.l2 { top: 70vh; left: 15vw; }
+.l3 { top: 20vh; right: 12vw; }
+

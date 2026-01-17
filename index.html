@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>meddy</title>
+
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+
+  <div class="face" id="face">
+    <img src="pupil-left.png" id="eye-left" class="eye" alt="">
+    <img src="pupil-right.png" id="eye-right" class="eye" alt="">
+  </div>
+
+   <div class="links">
+    <a href="https://meddyordinateur.github.io/dateme" class="link l1">simulateur de date</a>
+    <a href="https://meddyordinateur.github.io/mesinging" class="link l2">et si tu n'existais pas</a>
+    <a href="https://soundcloud.com/meddor" class="link l3">musique</a>
+  </div>
+
+  <script>
+    const face = document.getElementById('face');
+    const eyeLeft = document.getElementById('eye-left');
+    const eyeRight = document.getElementById('eye-right');
+
+    // Coordonnées originales (en pixels dans l'image de base)
+    const eyesPos = {
+      left: { x: 377, y: 1319 },
+      right: { x: 715, y: 1309 }
+    };
+
+    // amplitude maximale du mouvement des pupilles (en px à l’échelle 1)
+    const maxOffset = 20;
+
+    function updateEyePositions() {
+      const rect = face.getBoundingClientRect();
+      const scaleX = rect.width / 1200;
+      const scaleY = rect.height / 1599;
+      const eyeSize = rect.width * 0.05;
+
+      const leftX = eyesPos.left.x * scaleX - eyeSize / 2;
+      const leftY = eyesPos.left.y * scaleY - eyeSize / 2;
+      const rightX = eyesPos.right.x * scaleX - eyeSize / 2;
+      const rightY = eyesPos.right.y * scaleY - eyeSize / 2;
+
+      eyeLeft.dataset.centerX = leftX + eyeSize / 2;
+      eyeLeft.dataset.centerY = leftY + eyeSize / 2;
+      eyeRight.dataset.centerX = rightX + eyeSize / 2;
+      eyeRight.dataset.centerY = rightY + eyeSize / 2;
+
+      eyeLeft.style.left = `${leftX}px`;
+      eyeLeft.style.top = `${leftY}px`;
+      eyeRight.style.left = `${rightX}px`;
+      eyeRight.style.top = `${rightY}px`;
+    }
+
+    function moveEyes(e) {
+      const rect = face.getBoundingClientRect();
+      const scaleX = rect.width / 1200;
+      const scaleY = rect.height / 1599;
+      const scaledOffset = maxOffset * scaleX;
+
+      // fonction interne pour chaque œil
+      function moveEye(eye) {
+        const cx = parseFloat(eye.dataset.centerX);
+        const cy = parseFloat(eye.dataset.centerY);
+        const dx = e.clientX - (rect.left + cx);
+        const dy = e.clientY - (rect.top + cy);
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const ratio = Math.min(dist, scaledOffset) / dist || 0;
+
+        const offsetX = dx * ratio;
+        const offsetY = dy * ratio;
+
+        eye.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      }
+
+      moveEye(eyeLeft);
+      moveEye(eyeRight);
+    }
+
+    window.addEventListener('resize', updateEyePositions);
+    window.addEventListener('load', updateEyePositions);
+    window.addEventListener('mousemove', moveEyes);
+  </script>
+
+</body>
+</html>

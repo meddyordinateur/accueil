@@ -17,6 +17,7 @@
    <div class="links">
     <a href="https://meddyordinateur.github.io/dateme" class="link l1">simulateur de date</a>
     <a href="https://meddyordinateur.github.io/mesinging" class="link l2">et si tu n'existais pas</a>
+    <a href="https://meddyordinateur.github.io/openworld" class="link l3">open world</a>
     <a href="https://soundcloud.com/meddor" class="link l3">musique</a>
   </div>
 
@@ -25,13 +26,13 @@
     const eyeLeft = document.getElementById('eye-left');
     const eyeRight = document.getElementById('eye-right');
 
-    // Coordonnées originales (en pixels dans l'image de base)
+
     const eyesPos = {
       left: { x: 377, y: 1319 },
       right: { x: 715, y: 1309 }
     };
 
-    // amplitude maximale du mouvement des pupilles (en px à l’échelle 1)
+
     const maxOffset = 20;
 
     function updateEyePositions() {
@@ -62,7 +63,7 @@
       const scaleY = rect.height / 1599;
       const scaledOffset = maxOffset * scaleX;
 
-      // fonction interne pour chaque œil
+
       function moveEye(eye) {
         const cx = parseFloat(eye.dataset.centerX);
         const cy = parseFloat(eye.dataset.centerY);
@@ -88,3 +89,4 @@
 
 </body>
 </html>
+

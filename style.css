@@ -1,7 +1,3 @@
-/* =========================
-   BASE
-   ========================= */
-
 html, body {
   background: #ffffff;
   margin: 0;
@@ -14,9 +10,7 @@ html, body {
   align-items: center;
 }
 
-/* =========================
-   VISAGE
-   ========================= */
+
 
 .face {
   position: relative;
@@ -30,9 +24,7 @@ html, body {
   background-position: center;
 }
 
-/* =========================
-   YEUX
-   ========================= */
+
 
 .eye {
   position: absolute;
@@ -44,9 +36,7 @@ html, body {
   transition: transform 0.05s linear;
 }
 
-/* =========================
-   LIENS (PAGE D’ACCUEIL)
-   ========================= */
+
 
 .links {
   position: absolute;
@@ -77,11 +67,11 @@ html, body {
 }
 
 /* =========================
-   POSITIONNEMENT DES LIENS
+LIENS
    ========================= */
 
 .l1 { top: 15vh; left: 10vw; }
 .l2 { top: 70vh; left: 15vw; }
 .l3 { top: 20vh; right: 12vw; }
 .l4 { top: 35vh; right: 7vw; }
-.l5 { top: 60vh; right: 1vw; }
+.l5 { top: 60vh; left: 7vw; }

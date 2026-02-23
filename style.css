@@ -10,7 +10,9 @@ html, body {
   align-items: center;
 }
 
-
+:root {
+  --hero-height: 180px;
+}
 
 .face {
   position: relative;
@@ -40,7 +42,7 @@ html, body {
 
 .links {
   position: absolute;
-  inset: 0;
+  inset: var(--hero-height) 0 0 0;
   pointer-events: none;
 }
 
@@ -71,9 +73,16 @@ html, body {
   letter-spacing: 0.05em;
   text-transform: lowercase;
   position: absolute;
-  top: 60px;
+  top: 0;
+  left: 0;
   width: 100%;
-  text-align: center;
+  height: var(--hero-height);
+
+  display: flex;
+ flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
   z-index: 10;
 }
 

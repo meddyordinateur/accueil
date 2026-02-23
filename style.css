@@ -68,6 +68,8 @@ html, body {
 
 .hero {
   font-family: sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
   position: absolute;
   top: 60px;
   width: 100%;

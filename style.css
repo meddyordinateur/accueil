@@ -97,7 +97,46 @@ html, body {
   opacity: 0.8;
   margin-top: 10px;
 }
+#who-btn {
+  position: fixed;
+  top: 30px;
+  left: 30px;
 
+  background: white;
+  border: 1px solid black;
+  padding: 10px 18px;
+
+  font-family: "Times New Roman", serif;
+  font-size: 20px;
+
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#pointer {
+  position: fixed;
+
+  left: 35%;
+  bottom: 60%;
+
+  display: none;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "Times New Roman", serif;
+  font-size: 32px;
+
+  z-index: 1000;
+}
+
+#pointer .arrow {
+  font-size: 80px;
+  transform: rotate(35deg);
+}
+
+#pointer .label {
+  font-style: italic;
+}
 
 /* =========================
 LIENS
@@ -108,4 +147,4 @@ LIENS
 .l3 { top: 20vh; right: 12vw; }
 .l4 { top: 35vh; right: 7vw; }
 .l5 { top: 50vh; left: 11vw; }
-.l6 { top: 67vh; right: 20vw; 
+.l6 { top: 67vh; right: 20vw;} 

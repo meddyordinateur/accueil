@@ -6,6 +6,12 @@
 
 </head>
 <link rel="stylesheet" href="style.css">
+<button id="who-btn">Qui suis-je ?</button>
+
+<div id="pointer">
+  <div class="arrow">→</div>
+  <div class="label">lui</div>
+</div>
 
 <body>
 
@@ -92,10 +98,23 @@
     window.addEventListener('resize', updateEyePositions);
     window.addEventListener('load', updateEyePositions);
     window.addEventListener('mousemove', moveEyes);
+
+    const whoBtn = document.getElementById('who-btn');
+const pointer = document.getElementById('pointer');
+
+let visible = false;
+
+whoBtn.addEventListener('click', () => {
+  visible = !visible;
+
+  pointer.style.display = visible ? 'flex' : 'none';
+});
   </script>
 
 </body>
 </html>
+
+
 
 
 
